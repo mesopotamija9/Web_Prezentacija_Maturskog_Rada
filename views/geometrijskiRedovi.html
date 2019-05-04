@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Бесконачни геометријски ред са применама</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" href="../assets/fontawesome-free-5.8.1-web/css/all.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+<body>
+    <nav class="navbar nav-colored" id="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="../index.html" class="logo">Милош Брковић</a>
+        <ul class="main-nav" id="js-menu">
+            <li>
+                <a href="../index.html" class="nav-links">Почетак</a>
+            </li>
+            <li>
+                <a href="../index.html#sadrzaj" class="nav-links">Садржај</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="main-flex"> 
+        <div id="main-content">
+            <h1>Геометријски редови</h1>
+            <hr>
+            <p>
+                Геометријски редови су редови форме
+                <span class="formula">$$b+bq+bq^2+⋯+bq^{n-1}+⋯= \sum_{n=1}^\infty bq^{n-1}$$</span>
+                у којима су a и r непроменљиви реални бројеви и a ≠ 0. Ови редови могу такође бити написани као \(\sum_{n=0}^\infty bq^{n}\). <strong>Количник</strong> q може бити позитиван, као у
+                <span class="formula">$$1+  \frac{1}{2}+  \frac{1}{4}+⋯+ (\frac{1}{2})^{n-1}+⋯,$$</span>
+                или негативан, као у
+                <span class="formula">$$1-  \frac{1}{3}+  \frac{1}{9}-…+ (\frac{1}{3})^{n-1}+⋯.$$</span>
+                Ако је q = 1, n-ти парцијални збир геометријског реда је
+                <span class="formula">$$S_n=b+b(1)+b(1)^2+⋯+b(1)^{n-1}=nb,$$</span>
+            </p>
+            <p>
+                <strong>Теорема 1.</strong> У геометријском низу (\(b_n\)) на првим чланом \(b_1\) и количником q, за све природне бројеве n важи:
+                <span class="formula">$$b_n= b_1•q^{n-1}$$</span>
+                <strong>Доказ</strong>: Доказ се изводи примером математичке индукције. За n  = 1  имамо \(b_1=b_1  • q^0\), па је тврђење тачно. Претпоставимо да важи \(b_n= b_1•q^{n-1}\) за неки природни број n. Тада имамо:
+                <span class="formula">$$b_{n+1}= b_н•q= b_1  • q^{n-1}  •q= b_1  • q^n,$$</span>
+                па је тврђење тачно за n + 1, што значи да је на основу принципа математичке индукције оно тачно за све природне бројеве.
+                У многим задацима, поготово у применама математике, јавља се потреба да се израчуна збир првих n чланова геометријског низа.
+                </p><p><strong>Теорема 2.</strong> Збир првих n чланова геометријског низа (\(b_n\)) чији је количник q ≠ 0 износи
+                <span class="formula">$$S_n= b_1  \frac{q^{n-1}}{q-1}$$</span>
+                <strong>Доказ</strong>: Како је \(b_1 q= b_2,b_2 q= b_3,…,b_n q=b_{n+1}\), следи да је
+                <span class="formula">$$S_n q= b_1 q+ b_2 q+⋯+ b_n q= b_2+ b_3+⋯+b_{n+1}.$$</span>
+                Када од ове једнакости одузмемо тражени збир \(S_n= b_1+ b_2+⋯+ b_n\),  добијемо
+                <span class="formula">$$S_n q- S_n= b_{n+1}- b_1= b_1 q^n- b_1,$$</span>
+                односно
+                <span class="formula">$$S_n (q-1)= b_1 (q^n-1),$$</span>
+                одакле следи истинитост тврђења.
+            </p>
+            <p>
+                <strong>ПРИМЕР 1</strong> Индекс почиње са n = 1
+                Геометријски ред за b = 1/9 I q = 1/3 је
+                <span class="formula">$$\frac{1}{9}+  \frac{1}{27}+  \frac{1}{81}+⋯= \sum_{n=1}^\infty \frac{1}{9} (\frac{1}{3})^{n-1}=$$
+                    $$= \frac{\frac{1}{9}}{1-\frac{1}{3}}= \frac{1}{6}.$$</span>
+                <strong>ПРИМЕР 2</strong> Индекс почиње са n = 0
+                Ред
+                <span class="formula">$$\sum_{n=0}^\infty \frac{(-1)^n 5}{4^n} =5-  \frac{5}{4}+  \frac{5}{16}-  \frac{5}{64}+⋯$$</span>
+                Је геометријски ред са b = 5 и q = 1/4. 
+            </p>
+            <p>
+                <strong>ПРИМЕР 3</strong> Лоптра која одскаче
+                Лопта је бачена са a метара изнад равне површине. Сваки пут лопта удари о површину и пошто падне на растојању h, она одскочи до растојања rh, где је r позитивно, али је мање од 1. Наћи укупно растојање које је лопта прешла навише и наниже.
+                </p><p><strong>Решење</strong> Укупно расојање је
+                <span class="formula">$$s=a+2ar+2ar^2+2ar^3+⋯=a+  \frac{2ar}{1-r}=a \frac{1+r}{1-r}$$</span>
+                Ако је, на пример, a = 6m I r = 2/3, растојање је
+                <span class="formula">$$s=6 \frac{1+ \frac{2}{3}}{1- \frac{2}{3}}=6 \frac{\frac{5}{3}}{\frac{1}{3}}=30m$$</span>
+                <strong>ПРИМЕР 4</strong> Бесконачни децимални бројеви чије се цифре понављају
+                Изразити бесконачан децимални број чије се цифре понављају 5,232323... као однос два цела броја.
+                </p><p><strong>Решење</strong> 
+                <span class="formula">$$5.232323…=5+  \frac{23}{100}+  \frac{23}{100^2} +  \frac{23}{100^3} +⋯=$$</span>
+                <span class="formula">$$=5+  \frac{23}{100} (1+ \frac{1}{100}+ \frac{23}{100^2}+⋯)=$$</span>
+                    <span class="formula">$$=5+  \frac{23}{100} (\frac{1}{0.99})=5+  \frac{23}{99}=  \frac{518}{99}$$</span>
+                        <span class="formula">$$b = 1$$</span>
+                            <span class="formula">$$q = \frac{1}{100}$$</span>
+
+            </p>
+        </div>
+        <div id="sidebar">
+            <h3>Садржај</h3>
+            <a href="uvod.html">Увод</a>
+            <a href="beskonacniRed.html">Бесконачни ред</a>
+            <a href="#">Геометријски редови</a>
+            <a href="primeneEkonomija.html">Примене геометријског низа у економији</a>
+            <a href="zezonoviParadoksi.html">Зенонови парадокси; Бесконачни геометријски низ</a>
+            <a href="literatura.html">Литература</a>
+        </div>
+    </main>
+    <footer>Гимназија Смедерево, 2019.</footer>
+
+    <script src="../js/view.js"></script>
+
+</body>
+</html>
